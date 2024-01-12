@@ -1,5 +1,6 @@
 
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
 
 
@@ -16,7 +17,7 @@ router.post('/about', (reg, res) => {
 
 
 // specific user by id
-router.post('/about/:id', (reg, res) => {
+router.get('/about/:id', (reg, res) => {
     res.send('Hello from specific post')
 })
 
@@ -30,4 +31,4 @@ router.delete('/about/:id', (reg, res) => {
     res.send('Hello delete')
 })
 
-module.exports = Router;
+module.exports = router;

@@ -1,34 +1,33 @@
+const router = require('express').Router();
+const {getAbout, getAboutId, addAbout, updateAbout, delAbout} = require('../controlers/aboutCtrl');
 
-const express = require('express');
-const router = express.Router();
+// const aboutSchema = require('../models/aboutModel');
 
 
 
+// ...........about............
 
 // get about user
-router.get('/about', (reg, res) => {
-    res.send('Hello from about router')
-})
+router.get('/about',getAbout)
 
 // add about user
-router.post('/about', (reg, res) => {
-    res.send('Hello from post')
-})
+router.post('/about',addAbout)
 
 
-// specific user by id
-router.get('/about/:id', (reg, res) => {
-    res.send('Hello from specific post')
-})
+// get specific user by id 
+router.get('/about/:id',getAboutId)
 
-// update specific user by id
-router.put('/about/update/:id', (reg, res) => {
-    res.send('Hello from updated post')
-})
 
-// delete specific user by id
-router.delete('/about/:id', (reg, res) => {
-    res.send('Hello delete')
-})
+  // update specific user by id
+router.put('/about/update/:id', updateAbout)
+
+
+  // delete specific user by id
+router.delete('/about/:id', delAbout
+)
+
+
+
+
 
 module.exports = router;
